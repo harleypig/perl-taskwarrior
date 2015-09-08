@@ -49,7 +49,7 @@ verbose = %s:%f:%l:%c:%p %m\n
 # debugging_modules =
 
 # Don't use XXX, TODO, or FIXME.
-[Bangs::ProhibitFlagComments]
+[-Bangs::ProhibitFlagComments]
 # set_themes                         = bangs maintenance
 # add_themes                         =
 # severity                           = 2
@@ -262,7 +262,7 @@ verbose = %s:%f:%l:%c:%p %m\n
 # Allow hard tabs before first non-whitespace character.
 # allow_leading_tabs = 1
 
-[CodeLayout::ProhibitHashBarewords]
+[-CodeLayout::ProhibitHashBarewords]
 # set_themes                         = itch
 # add_themes                         =
 # severity                           = 3
@@ -297,7 +297,7 @@ verbose = %s:%f:%l:%c:%p %m\n
 # Complain even if there are non-word characters in the values.
 # strict = 0
 
-[CodeLayout::ProhibitSpaceIndentation]
+[-CodeLayout::ProhibitSpaceIndentation]
 # set_themes                         = cosmetic
 # add_themes                         =
 # severity                           = 2
@@ -366,14 +366,14 @@ verbose = %s:%f:%l:%c:%p %m\n
 # maximum_violations_per_document    = no_limit
 
 # Require that all modules have a `use utf8;' statement.
-[CodeLayout::RequireUseUTF8]
+[-CodeLayout::RequireUseUTF8]
 # set_themes                         = swift unicode
 # add_themes                         =
 # severity                           = 3
 # maximum_violations_per_document    = no_limit
 
 # Use tabs for indenting, spaces for aligning.
-[CodeLayout::TabIndentSpaceAlign]
+[-CodeLayout::TabIndentSpaceAlign]
 # set_themes                         = cosmetic
 # add_themes                         =
 # severity                           = 3
@@ -401,7 +401,7 @@ verbose = %s:%f:%l:%c:%p %m\n
 # maximum_violations_per_document    = no_limit
 
 # explicit Perl version for features used
-[Compatibility::PerlMinimumVersionAndWhy]
+[-Compatibility::PerlMinimumVersionAndWhy]
 # set_themes                         = compatibility pulp
 # add_themes                         =
 # severity                           = 2
@@ -424,7 +424,7 @@ verbose = %s:%f:%l:%c:%p %m\n
 # above_version =
 
 # Don't allow three-argument open unless the code uses a version of perl that supports it.
-[Compatibility::ProhibitThreeArgumentOpen]
+[-Compatibility::ProhibitThreeArgumentOpen]
 # set_themes                         = compatibility
 # add_themes                         =
 # severity                           = 5
@@ -501,7 +501,7 @@ verbose = %s:%f:%l:%c:%p %m\n
 # maximum_violations_per_document    = no_limit
 
 # Write `if($condition){ do_something() }' instead of `do_something() if $condition'.
-[ControlStructures::ProhibitPostfixControls]
+[-ControlStructures::ProhibitPostfixControls]
 # set_themes                         = core cosmetic pbp
 # add_themes                         =
 # severity                           = 2
@@ -703,7 +703,7 @@ script_sections = NAME | VERSION | SYNOPSIS | EXPORT | SUBROUTINES AND METHODS |
 # language =
 
 # Per-file editor settings.
-[Editor::RequireEmacsFileVariables]
+[-Editor::RequireEmacsFileVariables]
 # set_themes                         = editor more readability
 # add_themes                         =
 # severity                           = 2
@@ -803,7 +803,7 @@ script_sections = NAME | VERSION | SYNOPSIS | EXPORT | SUBROUTINES AND METHODS |
 # maximum_violations_per_document    = no_limit
 
 # Close filehandles as soon as possible after opening them.
-[InputOutput::RequireBriefOpen]
+[-InputOutput::RequireBriefOpen]
 # set_themes                         = core maintenance pbp
 # add_themes                         =
 # severity                           = 4
@@ -925,7 +925,7 @@ exclude_functions                    = sleep print
 # maximum_violations_per_document    = no_limit
 
 # Put source-control keywords in every file.
-[Miscellanea::RequireRcsKeywords]
+[-Miscellanea::RequireRcsKeywords]
 # set_themes                         = cosmetic deprecated pbp
 # add_themes                         =
 # severity                           = 2
@@ -949,7 +949,7 @@ exclude_functions                    = sleep print
 # maximum_violations_per_document    = no_limit
 
 # Enforce backward compatible code.
-[Modules::PerlMinimumVersion]
+[-Modules::PerlMinimumVersion]
 # set_themes                         = compatibility more
 # add_themes                         =
 # severity                           = 1
@@ -1075,14 +1075,14 @@ exclude_functions                    = sleep print
 # maximum_violations_per_document    = no_limit
 
 # Require a `use 5.006;' or similar.
-[Modules::RequirePerlVersion]
+[-Modules::RequirePerlVersion]
 # set_themes                         = compatibility more
 # add_themes                         =
 # severity                           = 1
 # maximum_violations_per_document    = no_limit
 
 # Give every module a `$VERSION' number.
-[Modules::RequireVersionVar]
+[-Modules::RequireVersionVar]
 # set_themes                         = core pbp readability
 # add_themes                         =
 # severity                           = 2
@@ -1254,7 +1254,7 @@ file_lexical_variables              = :all_upper
 # maximum_violations_per_document    = no_limit
 
 # Do not use "open"
-[OTRS::ProhibitOpen]
+[-OTRS::ProhibitOpen]
 # set_themes                         = otrs otrs_lt_3_3
 # add_themes                         =
 # severity                           = 5
@@ -1289,7 +1289,7 @@ file_lexical_variables              = :all_upper
 # maximum_violations_per_document    = no_limit
 
 # Variable, subroutine, and package names have to be in CamelCase
-[OTRS::RequireCamelCase]
+[-OTRS::RequireCamelCase]
 # set_themes                         = otrs otrs_lt_3_3
 # add_themes                         =
 # severity                           = 5
@@ -1846,7 +1846,7 @@ file_lexical_variables              = :all_upper
 # maximum_violations_per_document    = no_limit
 
 # don't use the -f file test
-[ValuesAndExpressions::ProhibitFiletest_f]
+[-ValuesAndExpressions::ProhibitFiletest_f]
 # set_themes                         = bugs pulp
 # add_themes                         =
 # severity                           = 3
@@ -1929,7 +1929,7 @@ file_lexical_variables              = :all_upper
 # maximum_violations_per_document    = no_limit
 
 # Use `q{}' or `qq{}' instead of quotes for awkward-looking strings.
-[ValuesAndExpressions::ProhibitNoisyQuotes]
+[-ValuesAndExpressions::ProhibitNoisyQuotes]
 # set_themes                         = core cosmetic pbp
 # add_themes                         =
 # severity                           = 2
@@ -2120,7 +2120,7 @@ file_lexical_variables              = :all_upper
 # maximum_violations_per_document    = no_limit
 
 # Write `$EVAL_ERROR' instead of `$@'.
-[Variables::ProhibitPunctuationVars]
+[-Variables::ProhibitPunctuationVars]
 # set_themes                         = core cosmetic pbp
 # add_themes                         =
 # severity                           = 2
