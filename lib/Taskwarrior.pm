@@ -8,4 +8,6 @@ use namespace::autoclean;
 
 use Carp;
 
+# VERSION
+
 1;

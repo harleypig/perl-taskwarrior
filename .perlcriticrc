@@ -1296,7 +1296,7 @@ file_lexical_variables              = :all_upper
 # maximum_violations_per_document    = no_limit
 
 # Use parens when a method is called
-[OTRS::RequireParensWithMethods]
+[-OTRS::RequireParensWithMethods]
 # set_themes                         = otrs otrs_lt_3_3
 # add_themes                         =
 # severity                           = 5

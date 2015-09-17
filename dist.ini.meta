@@ -72,13 +72,12 @@ directory = xt
 include_dotfiles = 1
 prune_directory = .git
 
-;[ChangelogFromGit]
+[GitFmtChanges]
 ;[Conflicts]
 ;[ContributorsFile]
 ;[Covenant]
 ;[CPANFile]
 ;[FakeFaker]
-;[GitFmtChanges]
 ;[InlineFiles]
 ;[InlineIncluder]
 ;[License]
@@ -108,44 +107,16 @@ prune_directory = .git
 [PodSyntaxTests]
 
 [Test::ChangesHasContent]
-;[Test::CheckChanges]
 [Test::CheckDeps]
-;[Test::CheckManifest]
-[Test::CleanNamespaces]
 [Test::Compile]
 [Test::Compile::PerFile]
-;[Test::CPAN::Changes]
-;[Test::CPAN::Meta::JSON]
-;[Test::DistManifest]
-;[Test::EOF]
-;[Test::EOL]
-;[Test::Fixme]
 [Test::Inline]
-;[Test::Kwalitee]
-;[Test::Legal]
-;[Test::MinimumVersion]
-[Test::NoTabs]
-;[Test::PAUSE::Permissions]
-;[Test::Pod::LinkCheck]
-;[Test::Pod::No404s]
 [Test::ReportPrereqs]
-[Test::Synopsis]
-[Test::UnusedVars] ; requires 5.10
 [Test::UseAllModules]
-[Test::Version]
 
 ;Use in conjunction with [Breaks]
 ;[Test::CheckBreaks]
 ;conflicts_module = Foo::Bar
-
-[Test::Perl::Critic]
-;critic_config = .perlcriticrc
-
-[Test::PodSpelling]
-wordlist = Pod::Wordlist
-spell_cmd = aspell list
-stopwords = LICENCE
-stopwords = MERCHANTABILITY
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;Phase: File Pruner
@@ -215,14 +186,22 @@ Module::Build::Version   = 0
 Module::Build::Version   = 0
 
 [Prereqs / TestRequires]
-Test::CheckChanges       = 0
-Test::CheckManifest      = 0
-Test::CPAN::Meta::JSON   = 0
-Test::HasVersion         = 0
-Test::MinimumVersion     = 0
-Test::NoSmartComments    = 0
-Test::Pod::LinkCheck     = 0
-Test::Version            = 0
+Test::CheckChanges                  = 0
+Test::CheckManifest                 = 0
+Test::CleanNamespaces               = 0
+Test::Cmd                           = 0
+Test::Compile                       = 0
+Test::CPAN::Meta::JSON              = 0
+Test::HasVersion                    = 0
+;Test::Legal                         = 0
+Test::MinimumVersion                = 0
+Test::NoBreakpoints                 = 0
+Test::NoSmartComments               = 0
+Test::Perl::Lint                    = 0
+Test::Pod::LinkCheck                = 0
+Test::Pod::Spelling::CommonMistakes = 0
+;Test::Prereq::Build                 = 0
+Test::Version                       = 0
 
 [ModuleBuild]
 ; https://github.com/Perl-Toolchain-Gang/Module-Build/issues/48
@@ -356,10 +335,42 @@ allow_dirty = .travis.yml
 ;[RewriteVersion::Sanitized]
 ;[StaticVersion]
 ;[Test::CreateFromMojoTemplates]
+;[Test::Fixme]
 ;[Test::Kwalitee::Extra] overlaps and conflicts with Test::Kwalitee
 ;[Test::LocalBrew]
 ;[Test::Portability] not interested in worrying about portability
 ;[TravisYML] can't get the .travis.yml file generated properly
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Using my own files
+
+;[Test::CheckChanges]
+;[Test::CheckManifest]
+;[Test::CleanNamespaces]
+;[Test::CPAN::Changes]
+;[Test::CPAN::Meta::JSON]
+;[Test::DistManifest]
+;[Test::EOF]
+;[Test::EOL]
+;[Test::Kwalitee]
+;[Test::Legal] can't install, dependencies failing
+;[Test::MinimumVersion]
+;[Test::NoTabs]
+;[Test::PAUSE::Permissions]
+;[Test::Pod::LinkCheck]
+;[Test::Pod::No404s]
+;[Test::Synopsis]
+;[Test::UnusedVars] ; requires 5.10
+;[Test::Version]
+
+;[Test::Perl::Critic]
+;critic_config = .perlcriticrc
+
+;[Test::PodSpelling]
+;wordlist = Pod::Wordlist
+;spell_cmd = aspell list
+;stopwords = LICENCE
+;stopwords = MERCHANTABILITY
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; DEPRECATED
@@ -382,7 +393,14 @@ allow_dirty = .travis.yml
 ; To be examined later
 
 ;[AppendExternalData]
+;[AssertOS]
+;[Authority]
+;[AuthorityFromModule]
 ;[AutoModuleShareDirs]
+;[ChangelogFromGit]
+;[Conflicts]
+;[Covenant]
+;[DynamicPrereqs]
 ;[Encoding]
 ;[GenerateFile]
 ;[GenerateFile::ShareDir]
@@ -402,14 +420,18 @@ allow_dirty = .travis.yml
 ;[Git::Remote::Check::BeforeBuild]
 ;[Git::Remote::Update]
 ;[Git::Remote::Update::BeforeBuild]
+;[Homepage]
 ;[if]
 ;[if::ENV]
 ;[if::not]
 ;[if::not::ENV]
+;[MetaConfig]
+;[Meta::Dynamic::Config]
 ;[MetaProvides]
 ;[MetaProvides::Class]
 ;[MetaProvides::FromFile]
 ;[MetaProvides::Package]
+;[MetaResources]
 ;[MetaResourcesFromGit]
 ;[ModuleBuildDatabase]
 ;[ModuleBuild::OptionalXS]
@@ -422,10 +444,14 @@ allow_dirty = .travis.yml
 ;[MungeFile::WithData]
 ;[MungeFile::WithDataSection]
 ;[OptionalFeature]
+;[OSPrereqs]
+;[PerlVersionPrereqs]
+;[Prereqs::FromCPANfile]
 ;[PurePerlTests]
 ;[ReleaseOnlyWithLatest]
 ;[RemovePrereqs]
 ;[RemovePrereqsMatching]
+;[Repository]
 ;[Rsync]
 ;[Run]
 ;[Run::AfterBuild]
@@ -439,20 +465,6 @@ allow_dirty = .travis.yml
 ;[Upload::SCP]
 ;[UploadToCpanSite]
 ;[VersionFromScript]
-;[AssertOS]
-;[Authority]
-;[AuthorityFromModule]
-;[Conflicts]
-;[Covenant]
-;[DynamicPrereqs]
-;[Homepage]
-;[MetaConfig]
-;[Meta::Dynamic::Config]
-;[MetaResources]
-;[OSPrereqs]
-;[PerlVersionPrereqs]
-;[Prereqs::FromCPANfile]
-;[Repository]
 
 ;[ModuleShareDirs]
 ;[ShareDir::Tarball]

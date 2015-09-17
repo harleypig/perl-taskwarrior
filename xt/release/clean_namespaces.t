@@ -21,5 +21,4 @@ plan skip_all => 'Test::CleanNamespaces required for these tests'
   if $@;
 
 Test::CleanNamespaces::all_namespaces_clean();
-
-done_testing;
+done_testing();

@@ -1,10 +1,16 @@
 # https://metacpan.org/pod/Test::Version
 
 ## no critic qw( ErrorHandling::RequireCheckingReturnValueOfEval )
+## no critic qw( Lax::RequireEndWithTrueConst )
 ## no critic qw( Lax::RequireExplicitPackage::ExceptForPragmata )
+## no critic qw( Modules::RequireEndWithOne )
+## no critic qw( Modules::RequireExplicitInclusion )
 ## no critic qw( Modules::RequireExplicitPackage )
+## no critic qw( NamingConventions::Capitalization )
 ## no critic qw( OTRS::ProhibitRequire )
+## no critic qw( Subroutines::ProhibitCallsToUndeclaredSubs )
 ## no critic qw( TestingAndDebugging::RequireUseStrict  )
+## no critic qw( TestingAndDebugging::RequireUseWarnings )
 
 BEGIN {
 
@@ -26,7 +32,6 @@ my $params = {
   is_strict   => 0,
   has_version => 1,
   multiple    => 0,
-
 };
 
 push @imports, $params

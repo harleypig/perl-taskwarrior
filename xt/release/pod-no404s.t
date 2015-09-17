@@ -18,4 +18,4 @@ eval { require Test::Pod::No404s };
 plan skip_all => 'Test::Pod::No404s required for these tests'
   if $@;
 
-all_pod_files_ok();
+Test::Pod::No404s::all_pod_files_ok();

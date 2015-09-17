@@ -1,3 +1,5 @@
+# https://metacpan.org/pod/Test::Pod::LinkCheck
+
 ## no critic qw( ErrorHandling::RequireCheckingReturnValueOfEval )
 ## no critic qw( Lax::RequireExplicitPackage::ExceptForPragmata )
 ## no critic qw( Modules::RequireExplicitPackage )
@@ -19,4 +21,3 @@ plan skip_all => 'Test::Pod::LinkCheck required for these tests'
   if $@;
 
 Test::Pod::LinkCheck->new->all_pod_ok;
-}

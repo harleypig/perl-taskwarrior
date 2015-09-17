@@ -18,4 +18,4 @@ eval { require Test::PAUSE::Permissions };
 plan skip_all => 'Test::PAUSE::Permissions required for these tests'
   if $@;
 
-all_permissions_ok();
+  Test::PAUSE::Permissions::all_permissions_ok();

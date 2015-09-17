@@ -18,5 +18,6 @@ eval { require Test::NoSmartComments };
 plan skip_all => 'Test::NoSmartComments required for these tests'
   if $@;
 
-no_smart_comments_in_all();
-no_smart_comments_in_tests();
+Test::NoSmartComments::no_smart_comments_in_all();
+Test::NoSmartComments::no_smart_comments_in_tests();
+done_testing();

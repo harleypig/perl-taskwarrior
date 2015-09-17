@@ -1,10 +1,17 @@
 # https://metacpan.org/pod/Test::EOL
 
 ## no critic qw( ErrorHandling::RequireCheckingReturnValueOfEval )
+## no critic qw( Lax::RequireEndWithTrueConst )
 ## no critic qw( Lax::RequireExplicitPackage::ExceptForPragmata )
+## no critic qw( Modules::RequireEndWithOne )
 ## no critic qw( Modules::RequireExplicitPackage )
+## no critic qw( NamingConventions::Capitalization )
 ## no critic qw( OTRS::ProhibitRequire )
+## no critic qw( Subroutines::ProhibitCallsToUndeclaredSubs )
+## no critic qw( Subroutines::ProhibitCallsToUnexportedSubs )
 ## no critic qw( TestingAndDebugging::RequireUseStrict  )
+## no critic qw( TestingAndDebugging::RequireUseWarnings )
+## no critic qw( Tics::ProhibitLongLines )
 
 BEGIN {
 
