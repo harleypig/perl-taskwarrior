@@ -73,6 +73,8 @@ include_dotfiles = 1
 prune_directory = .git
 
 [GitFmtChanges]
+log_format = "'  %an -- %ad%n  %s%n' --date=short"
+
 ;[Conflicts]
 ;[ContributorsFile]
 ;[Covenant]
