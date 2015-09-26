@@ -2,11 +2,6 @@ package Taskwarrior;
 
 # ABSTRACT: Taskwarrior is a command line task list manager. This package is an interface to that application.
 
-# # no critic qw( Subroutines::RequireFinalReturn )
-# # no critic qw( Bangs::ProhibitDebuggingModules )
-# # no critic qw( Subroutines::RequireArgUnpacking )
-# # no critic qw( Subroutines::ProhibitBuiltinHomonyms )
-
 use strict;
 use warnings;
 use feature ();
@@ -19,7 +14,7 @@ use parent 'Exporter';
 
 # VERSION
 
-#=for stopwords Taskwarrior OO NTT namespace unimport logmsg prepends msg syslog
+=for stopwords  Taskwarrior namespace unimport logmsg prepends msg
 
 =head1 SYNOPSIS
 
@@ -83,6 +78,9 @@ This is equivalent to the following code.
 
 =cut
 
+## no critic qw( Subroutines::RequireArgUnpacking )
+## no critic qw( Subroutines::RequireFinalReturn )
+
 sub import {
 
   warnings->import;
@@ -107,6 +105,9 @@ This is equivalent to the following code.
 
 =cut
 
+## no critic qw( Subroutines::ProhibitBuiltinHomonyms )
+## no critic qw( Subroutines::RequireFinalReturn )
+
 sub unimport {
 
   warnings->unimport;
@@ -125,6 +126,7 @@ C<dumper> is equivalent to the following code.
 
 =cut
 
+## no critic qw( Subroutines::RequireArgUnpacking )
 sub dumper { return Dumper @_ }
 
 #=head2 log
@@ -178,6 +180,9 @@ This will send something like the following to the log.
 
 sub logmsg {
 
+  ## no critic qw( CodeLayout::ProhibitParensWithBuiltins )
+  ## no critic qw( ValuesAndExpressions::ProhibitMagicNumbers )
+
   my @caller     = caller( 2 );
   my $subroutine = $caller[3];
 
@@ -221,6 +226,9 @@ sub logmsg {
 These are the various log levels.
 
 =cut
+
+## no critic qw( Subroutines::RequireFinalReturn )
+## no critic qw( Subroutines::RequireArgUnpacking )
 
 sub debug     { $log->debug( logmsg( @_ ) ) }
 sub info      { $log->info( logmsg( @_ ) ) }

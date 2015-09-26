@@ -660,7 +660,7 @@ verbose = %s:%f:%l:%c:%p %m\n
 # maximum_violations_per_document    = no_limit
 
 # All POD should be after `__END__'.
-[Documentation::RequirePodAtEnd]
+[-Documentation::RequirePodAtEnd]
 # set_themes                         = core cosmetic pbp
 # add_themes                         =
 # severity                           = 1
@@ -680,7 +680,7 @@ verbose = %s:%f:%l:%c:%p %m\n
 # allow_internal_sections = 1
 
 # Organize your POD into the customary sections.
-[Documentation::RequirePodSections]
+[-Documentation::RequirePodSections]
 lib_sections    = NAME | VERSION | SYNOPSIS | EXPORT | SUBROUTINES AND METHODS | AUTHOR | BUGS | SUPPORT | ACKNOWLEDGEMENTS | LICENSE AND COPYRIGHT
 script_sections = NAME | VERSION | SYNOPSIS | EXPORT | SUBROUTINES AND METHODS | AUTHOR | BUGS | SUPPORT | ACKNOWLEDGEMENTS | LICENSE AND COPYRIGHT
 # set_themes                         = core maintenance pbp
@@ -852,7 +852,7 @@ exclude_functions                    = sleep print
 # Cannot programmatically discover what parameters this policy takes.
 
 # empty quotes are okay as the fallback on the rhs of ||
-[Lax::ProhibitEmptyQuotes::ExceptAsFallback]
+[-Lax::ProhibitEmptyQuotes::ExceptAsFallback]
 # set_themes                         = lax
 # add_themes                         =
 # severity                           = 2
@@ -1048,7 +1048,7 @@ exclude_functions                    = sleep print
 # maximum_violations_per_document    = no_limit
 
 # Always make the `package' explicit.
-[Modules::RequireExplicitPackage]
+[-Modules::RequireExplicitPackage]
 # set_themes                         = bugs core
 # add_themes                         =
 # severity                           = 4
@@ -1058,7 +1058,7 @@ exclude_functions                    = sleep print
 # exempt_scripts = 1
 
 # Allow the specified modules to be imported outside a package.
-# allow_import_of =
+#allow_import_of = *.t
 
 # Package declaration must match filename.
 [Modules::RequireFilenameMatchesPackage]
@@ -1427,14 +1427,14 @@ file_lexical_variables              = :all_upper
 # allow_all_brackets =
 
 # Always use the `/s' modifier with regular expressions.
-[RegularExpressions::RequireDotMatchAnything]
+[-RegularExpressions::RequireDotMatchAnything]
 # set_themes                         = core cosmetic pbp
 # add_themes                         =
 # severity                           = 2
 # maximum_violations_per_document    = no_limit
 
 # Always use the `/x' modifier with regular expressions.
-[RegularExpressions::RequireExtendedFormatting]
+[-RegularExpressions::RequireExtendedFormatting]
 # set_themes                         = core maintenance pbp
 # add_themes                         =
 # severity                           = 3
@@ -1448,7 +1448,7 @@ file_lexical_variables              = :all_upper
 # strict = 0
 
 # Always use the `/x' modifier with regular expressions, except when the regex is used
-[RegularExpressions::RequireExtendedFormattingExceptForSplit]
+[-RegularExpressions::RequireExtendedFormattingExceptForSplit]
 # set_themes                         = reneeb
 # add_themes                         =
 # severity                           = 3
@@ -1462,7 +1462,7 @@ file_lexical_variables              = :all_upper
 # strict = 0
 
 # Always use the `/m' modifier with regular expressions.
-[RegularExpressions::RequireLineBoundaryMatching]
+[-RegularExpressions::RequireLineBoundaryMatching]
 # set_themes                         = core cosmetic pbp
 # add_themes                         =
 # severity                           = 2
@@ -1679,7 +1679,7 @@ file_lexical_variables              = :all_upper
 
 # The additional modules to treat as equivalent to "strict".
 # Values that are always included: Dancer, Dancer2, Mo, Modern::Perl, Mojo::Base, Mojolicious::Lite, Moo, Moo::Role, Moose, Moose::Exporter, Moose::Role, Moose::Util::TypeConstraints, MooseX::NonMoose, MooseX::Role::Parameterized, MooseX::Singleton, Mouse, Mouse::Exporter, Mouse::Role, Mouse::Util::TypeConstraints, strict.
-# equivalent_modules =
+equivalent_modules = Taskwarrior
 
 # Always `use warnings'.
 [TestingAndDebugging::RequireUseWarnings]
@@ -1690,7 +1690,7 @@ file_lexical_variables              = :all_upper
 
 # The additional modules to treat as equivalent to "warnings".
 # Values that are always included: Dancer, Dancer2, Mo, Modern::Perl, Mojo::Base, Mojolicious::Lite, Moo, Moo::Role, Moose, Moose::Exporter, Moose::Role, Moose::Util::TypeConstraints, MooseX::NonMoose, MooseX::Role::Parameterized, MooseX::Singleton, Mouse, Mouse::Exporter, Mouse::Role, Mouse::Util::TypeConstraints, warnings.
-# equivalent_modules =
+equivalent_modules = Taskwarrior
 
 # 80 x 40 for life!
 [Tics::ProhibitLongLines]
@@ -1832,7 +1832,7 @@ file_lexical_variables              = :all_upper
 # maximum_violations_per_document    = no_limit
 
 # Write `q{}' instead of `'''.
-[ValuesAndExpressions::ProhibitEmptyQuotes]
+[-ValuesAndExpressions::ProhibitEmptyQuotes]
 # set_themes                         = core cosmetic pbp
 # add_themes                         =
 # severity                           = 2
