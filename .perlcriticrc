@@ -1490,7 +1490,7 @@ file_lexical_variables              = :all_upper
 # severity                           = 4
 # maximum_violations_per_document    = no_limit
 
-[Subroutines::ProhibitCallsToUndeclaredSubs]
+[-Subroutines::ProhibitCallsToUndeclaredSubs]
 # set_themes                         = bugs strictersubs
 # add_themes                         =
 # severity                           = 4
