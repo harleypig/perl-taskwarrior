@@ -1,5 +1,7 @@
 package Taskwarrior::Task;
 
+# ABSTRACT: The main task handling module for the Taskwarrior package.
+
 use strict;
 use warnings;
 
@@ -10,6 +12,8 @@ use Time::Piece;
 use Types::Standard qw( Str );
 
 use Taskwarrior::Types -all;
+
+# VERSION
 
 my @known_attributes = qx{task _columns};
 chomp @known_attributes;

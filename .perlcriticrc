@@ -796,7 +796,7 @@ script_sections = NAME | VERSION | SYNOPSIS | EXPORT | SUBROUTINES AND METHODS |
 # maximum_violations_per_document    = no_limit
 
 # Write `print {$FH} $foo, $bar;' instead of `print $FH $foo, $bar;'.
-[InputOutput::RequireBracedFileHandleWithPrint]
+[-InputOutput::RequireBracedFileHandleWithPrint]
 # set_themes                         = core cosmetic pbp
 # add_themes                         =
 # severity                           = 1
@@ -1146,7 +1146,7 @@ exclude_functions                    = sleep print
 # equivalent_modules = Moose
 
 # Distinguish different program components by case.
-[NamingConventions::Capitalization]
+[-NamingConventions::Capitalization]
 file_lexical_variables              = :all_upper
 # set_themes                         = core cosmetic pbp
 # add_themes                         =
@@ -1354,7 +1354,7 @@ file_lexical_variables              = :all_upper
 # exception_source =
 
 # Split long regexps into smaller `qr//' chunks.
-[RegularExpressions::ProhibitComplexRegexes]
+[-RegularExpressions::ProhibitComplexRegexes]
 # set_themes                         = core maintenance pbp
 # add_themes                         =
 # severity                           = 3
@@ -1372,7 +1372,7 @@ file_lexical_variables              = :all_upper
 # maximum_violations_per_document    = no_limit
 
 # Use character classes for literal meta-characters instead of escapes.
-[RegularExpressions::ProhibitEscapedMetacharacters]
+[-RegularExpressions::ProhibitEscapedMetacharacters]
 # set_themes                         = core cosmetic pbp
 # add_themes                         =
 # severity                           = 1

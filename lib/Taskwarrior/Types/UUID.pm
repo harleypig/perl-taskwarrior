@@ -1,9 +1,13 @@
 package Taskwarrior::Types::UUID;
 
+# ABSTRACT: A UUID type for the Taskwarrior package.
+
 use Type::Library -base;
 use Type::Tiny ();
 use Types::Standard qw( Str );
 use UUID::Tiny qw( is_uuid_string );
+
+# VERSION
 
 our @EXPORT = qw( Uuid );
 

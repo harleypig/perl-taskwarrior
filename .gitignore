@@ -19,3 +19,5 @@ nytprof.out
 *.o
 /pm_to_blib
 Taskwarrior-*
+task.commands
+test.commands

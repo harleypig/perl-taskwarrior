@@ -5,7 +5,7 @@
 ## no critic qw( ValuesAndExpressions::RequireInterpolationOfMetachars )
 ## no critic qw( Variables::ProhibitUnusedVariables )
 
-use Test::Most tests => 5;
+use Test::Most tests => 6;
 use Test::Trap;
 use Log::Any::Test;
 use Log::Any qw( $log );
@@ -43,6 +43,28 @@ subtest 'strict, warnings and features' => sub {
   eval 'state $mystateful = 1;';
   is( $@, '', 'state is available' );
 
+};
+
+subtest 'task executable' => sub {
+
+  plan tests => 2;
+
+  SKIP: {
+
+    skip 'task not exported', 1 unless ok( __PACKAGE__->can( 'task' ), 'Can do task' );
+
+    my $version = task( '--version' );
+    like( $version, qr/^(\d\.?){3}$/, 'got what appears to be a version number' );
+
+    # XXX: How do I test for a missing required executable?
+    #my $OLDPATH = delete $ENV{PATH};
+    #eval q!use Taskwarrior;print $Taskwarrior::task!;
+    #diag( "after deleting path and using Taskwarrior: $@" );
+    #
+    ### no critic qw( Variables::RequireLocalizedPunctuationVars )
+    #$ENV{PATH} = $OLDPATH;
+
+  }
 };
 
 subtest 'carping' => sub {

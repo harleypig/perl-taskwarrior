@@ -1,5 +1,7 @@
 package Taskwarrior::Hooks;
 
+# ABSTRACT: The library that handles hooks for the taskwarrior package.
+
 use strict;
 use warnings;
 use feature 'state';
@@ -19,6 +21,8 @@ use constant IS_ADD    => PROGNAME =~ /^on-add-/;
 use constant IS_EXIT   => PROGNAME =~ /^on-exit-/;
 use constant IS_LAUNCH => PROGNAME =~ /^on-launch-/;
 use constant IS_MODIFY => PROGNAME =~ /^on-modify-/;
+
+# VERSION
 
 sub hook_croak ($) {
 

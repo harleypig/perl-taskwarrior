@@ -3,7 +3,7 @@ author  = Alan Young <harleypig@gmail.com>
 license = MIT
 copyright_holder = Alan Young
 copyright_year   = 2015
-;main_module      = lib/Config/NameValue.pm
+main_module      = lib/Taskwarrior.pm
 
 ; !!!
 ; !!! see https://metacpan.org/module/Dist::Zilla::PluginBundle::DAGOLDEN
@@ -200,6 +200,7 @@ Test::MinimumVersion                = 0
 Test::NoBreakpoints                 = 0
 Test::NoSmartComments               = 0
 Test::Perl::Lint                    = 0
+Test::Pod::Content                  = 0
 Test::Pod::LinkCheck                = 0
 Test::Pod::Spelling::CommonMistakes = 0
 ;Test::Prereq::Build                 = 0
